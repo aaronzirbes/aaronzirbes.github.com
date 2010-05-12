@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <title>address-lookup-zpfour 0.1.1 - Reference Documentation</title>
+        <link rel="stylesheet" href="../../css/ref.css" type="text/css" media="screen" title="Ref" charset="utf-8"/>
+    </head>
+    <body class="body">
+    <h1>install-address-lookup-example</h1><p class="paragraph"/><h2>Purpose</h2><p class="paragraph"/>Creates a GSP page locted at grails-app/views/addressLookup/test.gsp to demonstrate the usage of the javascript tags within a GSP page to allow automatic address lookups.<p class="paragraph"/><pre class="bq"><code>
+   grails install-address-lookup-example</code></pre><p class="paragraph"/>
+<h2>Description</h2><p class="paragraph"/>The sample page demonstrates the required head tags<p class="paragraph"/><pre class="bq"><code>
+	&#60;g:setProvider library="jquery"/&#62;
+	&#60;g:javascript library="jquery"/&#62;
+	&#60;script type="text/javascript" src="${resource(file:'address-lookup-zp4.js', dir:'js', plugin:'address-lookup-zpfour')}" /&#62;</code></pre><p class="paragraph"/>It demonstrates creating an onChange trigger for a set of address form fields by putting the addressLookupOnChange tag in the head.<p class="paragraph"/><pre class="bq"><code>
+	&#60;g:addressLookupOnChange /&#62;<p class="paragraph"/>It demonstrates the addressLookupLink and addressLookupButton tags.</code></pre><p class="paragraph"/><pre class="bq"><code>
+	&#60;g:addressLookupButton value="lookup address" /&#62;
+	&#60;g:addressLookupLink&#62; lookup address &#60;/g:addressLookupLink&#62;</code></pre><p class="paragraph"/>
+
+    </body>
+</html>

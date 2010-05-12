@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <title>3. Installation</title>
+        <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" title="Ref" charset="utf-8"/>
+    </head>
+    <body class="body">
+    <h1><a name="3. Installation">3. Installation</a></h1><h2>Service and Groovy classes</h2><p class="paragraph"/>The <code>com.semaphore.zp4.AddressService</code> service, and <code>com.semaphore.zp4.StreetAddress</code> and <code>com.semaphore.zp4.Zp4Address</code> classes should work after setting up the <code>Config.groovy</code> file.<p class="paragraph"/><h2>Tags</h2>
+<blockquote class="note">
+In order to use the tags, you need need to install the <em class="italic">jquery</em> plugin. Then you will need to include the following in the &#60;head&#62; section of your GSP pages.  This can optionally be put in your <code>views/layouts/main.gsp</code> (or whatever layout you are using).
+</blockquote><p class="paragraph"/>The required items are the following two lines<p class="paragraph"/><div class="code"><pre>&#60;g:javascript library=<span class="java&#45;quote">"jquery"</span>/&#62;
+&#60;script type=<span class="java&#45;quote">"text/javascript"</span> src=<span class="java&#45;quote">"$&#123;resource(file:'address&#45;lookup&#45;zp4.js', dir:'js', plugin:'address&#45;lookup&#45;zpfour')&#125;"</span> /&#62;</pre></div><p class="paragraph"/><h2>Example</h2><p class="paragraph"/><div class="code"><pre>&#60;g:setProvider library=<span class="java&#45;quote">"jquery"</span>/&#62;
+&#60;html&#62;
+	&#60;head&#62;
+		&#60;title&#62;Some Page&#60;/title&#62;
+		&#60;g:javascript library=<span class="java&#45;quote">"jquery"</span>/&#62;
+		&#60;script type=<span class="java&#45;quote">"text/javascript"</span> src=<span class="java&#45;quote">"$&#123;resource(file:'address&#45;lookup&#45;zp4.js', dir:'js', plugin:'address&#45;lookup&#45;zpfour')&#125;"</span> /&#62;
+	&#60;/head&#62;
+	&#60;body&#62;
+		&#60;form&#62;
+		&#8230;
+		&#60;g:textField name=<span class="java&#45;quote">"address"</span>&#62;&#60;br/&#62;
+		&#60;g:textField name=<span class="java&#45;quote">"city"</span>&#62;		
+		&#60;g:textField name=<span class="java&#45;quote">"state"</span>&#62;		
+		&#60;g:textField name=<span class="java&#45;quote">"zipCode"</span>&#62;<p class="paragraph"/>		&#60;g:addressLookupLink&#62;Link to lookup <span class="java&#45;keyword">this</span> address&#60;/g:addressLookupLink&#62;
+		&#60;g:addressLookupButton value=<span class="java&#45;quote">"Button to lookup <span class="java&#45;keyword">this</span> address"</span> /&#62;
+		&#8230;
+		&#60;/form&#62;
+	&#60;/body&#62;
+&#60;/html&#62;</pre></div><p class="paragraph"/>
+    </body>
+</html>
