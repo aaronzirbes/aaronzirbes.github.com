@@ -16,7 +16,7 @@
             </div>
             <div class="message">address-lookup-zpfour</div>
             <h1>address-lookup-zpfour - Reference Documentation</h1>
-            <p><strong>Authors:</strong> </p>
+            <p><strong>Authors:</strong> Aaron J. Zirbes</p>
             <p><strong>Version:</strong> 0.1.2</p>
             <em></em>
         </div>
@@ -43,7 +43,7 @@ format=XML<p class="paragraph"/>&#91;outputs&#93;
 10=ZIP (<span class="java&#45;keyword">final</span>)
 11=Errors (binary)
 12=Error numbers (detailed)
-13=Error message</pre></div><p class="paragraph"/><h2>The Start-up Command</h2><p class="paragraph"/>The following command will start up your HTTPSERV, you can create a shortcut with this command in it and put it in the Startup folder in the Start Menu if you wish.  It needs to be run from the <code>C:&#90;P4</code> folder.<p class="paragraph"/><div class="code"><pre>C:&#90;P4&#72;TTPSERV.EXE C:&#72;TTPSERV&#72;TTPSERV.INI</pre></div><p class="paragraph"/><h2>Done!</h2><p class="paragraph"/>You should now be able to fire up the ZP HTTP Server.  You can test it by opening a web browser to the IP address or DNS name of the server.  If it works, you should see a simple submit form.<p class="paragraph"/><h1><a name="3. Installation">3. Installation</a></h1><h2>Service and Groovy classes</h2><p class="paragraph"/>The <code>com.semaphore.zp4.AddressService</code> service, and <code>com.semaphore.zp4.StreetAddress</code> and <code>com.semaphore.zp4.Zp4Address</code> classes should work after setting up the <code>Config.groovy</code> file.<p class="paragraph"/><h2>Tags</h2>
+13=Error message</pre></div><p class="paragraph"/><h2>The Start-up Command</h2><p class="paragraph"/>The following command will start up your HTTPSERV, you can create a shortcut with this command in it and put it in the Startup folder in the Start Menu if you wish.  It needs to be run from the <code>C:&#90;P4</code> folder.<p class="paragraph"/><div class="code"><pre>C:&#90;P4&#72;TTPSERV.EXE C:&#72;TTPSERV&#72;TTPSERV.INI</pre></div><p class="paragraph"/><h2>Done!</h2><p class="paragraph"/>You should now be able to fire up the ZP HTTP Server.  You can test it by opening a web browser to the IP address or DNS name of the server.  If it works, you should see a simple submit form.<p class="paragraph"/><h1><a name="3. Installation">3. Installation</a></h1><h2>Service and Groovy classes</h2><p class="paragraph"/>The <code>com.semaphorecorp.zp4.AddressService</code> service, and <code>com.semaphorecorp.zp4.StreetAddress</code> and <code>com.semaphorecorp.zp4.Zp4Address</code> classes should work after setting up the <code>Config.groovy</code> file.<p class="paragraph"/><h2>Tags</h2>
 <blockquote class="note">
 In order to use the tags, you need need to install the  <em class="italic">jquery</em>  plugin. Then you will need to include the following in the &#60;head&#62; section of your GSP pages.  This can optionally be put in your <code>views/layouts/main.gsp</code> (or whatever layout you are using).
 </blockquote><p class="paragraph"/>The required items are the following two lines<p class="paragraph"/><div class="code"><pre>&#60;g:javascript library=<span class="java&#45;quote">"jquery"</span>/&#62;
@@ -69,9 +69,9 @@ In order to use the tags, you need need to install the  <em class="italic">jquer
 This setting goes in <code>grails-app/conf/Config.groovy</code>.
 </blockquote><p class="paragraph"/><h2>Examples</h2><p class="paragraph"/><div class="code"><pre>grails.plugins.addressLookupZpfour.server = 'http://192.168.1.7:8282/'</pre></div><p class="paragraph"/><div class="code"><pre>grails.plugins.addressLookupZpfour.server = 'http://zp4.intranet.example.com/'</pre></div><p class="paragraph"/><div class="code"><pre>grails.plugins.addressLookupZpfour.server = 'http://zp4.example.com:81/'</pre></div><p class="paragraph"/><div class="code"><pre>grails.plugins.addressLookupZpfour.server = 'http://127.0.0.1/'</pre></div><p class="paragraph"/><h1><a name="5. Example">5. Example</a></h1><h2>Tag examples</h2><p class="paragraph"/><blockquote class="note">
 In order to use the tags, you need need to install the  <em class="italic">jquery</em>  plugin.
-</blockquote><p class="paragraph"/>You may install an example GSP page to demonstrate the tags by running the command<p class="paragraph"/><div class="code"><pre>grails install&#45;address&#45;lookup&#45;example</pre></div><p class="paragraph"/><h2>Code Examples</h2><p class="paragraph"/>You can create an address, look it up, and get information about the lookup by using the following code.<p class="paragraph"/>The <code>StreetAddress.lookup()</code> method uses the com.semaphore.zp4.AddressService to look up the address, and return an instance of a com.semaphore.zp4.Zp4Address that contains the lookup result and some error message information.<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> com.semaphore.zp4.&#42;<p class="paragraph"/>def streetAddressInstance  = <span class="java&#45;keyword">new</span> StreetAddress(
+</blockquote><p class="paragraph"/>You may install an example GSP page to demonstrate the tags by running the command<p class="paragraph"/><div class="code"><pre>grails install&#45;address&#45;lookup&#45;example</pre></div><p class="paragraph"/><h2>Code Examples</h2><p class="paragraph"/>You can create an address, look it up, and get information about the lookup by using the following code.<p class="paragraph"/>The <code>StreetAddress.lookup()</code> method uses the com.semaphorecorp.zp4.AddressService to look up the address, and return an instance of a com.semaphorecorp.zp4.Zp4Address that contains the lookup result and some error message information.<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> com.semaphorecorp.zp4.&#42;<p class="paragraph"/>def streetAddressInstance  = <span class="java&#45;keyword">new</span> StreetAddress(
 	        address: '176 N. Mississippi River Boulevard',
-		    city: 'St. Paul', state: 'MN')<p class="paragraph"/>def zp4AddressIntance = streetAddressInstance.lookup()<p class="paragraph"/>def cleanedStreetAddressInstance = zp4AddressIntance.toStreetAddress()<p class="paragraph"/>assert zp4AddressIntance.certified == 'C'
+		    city: 'St. Paul', state: 'MN')<p class="paragraph"/>def zp4AddressIntance = streetAddressInstance.lookup()<p class="paragraph"/>def cleanedStreetAddressInstance = AddressIntance.toStreetAddress()<p class="paragraph"/>assert zp4AddressIntance.certified == 'C'
 assert zp4AddressIntance.errorMessage == 'Acceptable city name used'
 assert cleanedStreetAddressInstance.address == '176 Mississippi River Blvd N'
 assert cleanedStreetAddressInstance.city == 'Saint Paul'
@@ -87,13 +87,13 @@ assert cleanedStreetAddressInstance.zip4 == 5613</pre></div><p class="paragraph"
 &#125;</pre></div><p class="paragraph"/>in <code>BootStrap.groovy</code><p class="paragraph"/><div class="code"><pre>com.mycompany.Customer.metaClass.cleanUp = &#123;&#45;&#62;
 	<span class="java&#45;object">Integer</span> z = 0
 	z = <span class="java&#45;object">Integer</span>.parse(delegate.zipcode)
-	def a1 = <span class="java&#45;keyword">new</span> com.semaphore.zp4.StreetAddress(address: delegate.addressLine,
+	def a1 = <span class="java&#45;keyword">new</span> com.semaphorecorp.zp4.StreetAddress(address: delegate.addressLine,
 			city: delegate.city,
 			state: delegate.stateAbbreviation,
 			zipCode: z )
-	def za = a1.lookup()
+	def za = a.lookup()
 	<span class="java&#45;keyword">if</span> (za.certified == 'C') &#123;
-		def a2 = za.toStreetAddress()
+		def a2 = a.lookup().toStreetAddress()
 		delegate.addressLine = a2.address
 		delegate.city = a2.city
 		delegate.stateAbbreviation = a2.state

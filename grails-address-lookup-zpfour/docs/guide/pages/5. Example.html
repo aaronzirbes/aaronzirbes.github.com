@@ -7,9 +7,9 @@
     <body class="body">
     <h2>Tag examples</h2><p class="paragraph"/><blockquote class="note">
 In order to use the tags, you need need to install the  <em class="italic">jquery</em>  plugin.
-</blockquote><p class="paragraph"/>You may install an example GSP page to demonstrate the tags by running the command<p class="paragraph"/><div class="code"><pre>grails install&#45;address&#45;lookup&#45;example</pre></div><p class="paragraph"/><h2>Code Examples</h2><p class="paragraph"/>You can create an address, look it up, and get information about the lookup by using the following code.<p class="paragraph"/>The <code>StreetAddress.lookup()</code> method uses the com.semaphore.zp4.AddressService to look up the address, and return an instance of a com.semaphore.zp4.Zp4Address that contains the lookup result and some error message information.<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> com.semaphore.zp4.&#42;<p class="paragraph"/>def streetAddressInstance  = <span class="java&#45;keyword">new</span> StreetAddress(
+</blockquote><p class="paragraph"/>You may install an example GSP page to demonstrate the tags by running the command<p class="paragraph"/><div class="code"><pre>grails install&#45;address&#45;lookup&#45;example</pre></div><p class="paragraph"/><h2>Code Examples</h2><p class="paragraph"/>You can create an address, look it up, and get information about the lookup by using the following code.<p class="paragraph"/>The <code>StreetAddress.lookup()</code> method uses the com.semaphorecorp.zp4.AddressService to look up the address, and return an instance of a com.semaphorecorp.zp4.Zp4Address that contains the lookup result and some error message information.<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> com.semaphorecorp.zp4.&#42;<p class="paragraph"/>def streetAddressInstance  = <span class="java&#45;keyword">new</span> StreetAddress(
 	        address: '176 N. Mississippi River Boulevard',
-		    city: 'St. Paul', state: 'MN')<p class="paragraph"/>def zp4AddressIntance = streetAddressInstance.lookup()<p class="paragraph"/>def cleanedStreetAddressInstance = zp4AddressIntance.toStreetAddress()<p class="paragraph"/>assert zp4AddressIntance.certified == 'C'
+		    city: 'St. Paul', state: 'MN')<p class="paragraph"/>def zp4AddressIntance = streetAddressInstance.lookup()<p class="paragraph"/>def cleanedStreetAddressInstance = AddressIntance.toStreetAddress()<p class="paragraph"/>assert zp4AddressIntance.certified == 'C'
 assert zp4AddressIntance.errorMessage == 'Acceptable city name used'
 assert cleanedStreetAddressInstance.address == '176 Mississippi River Blvd N'
 assert cleanedStreetAddressInstance.city == 'Saint Paul'
@@ -25,13 +25,13 @@ assert cleanedStreetAddressInstance.zip4 == 5613</pre></div><p class="paragraph"
 &#125;</pre></div><p class="paragraph"/>in <code>BootStrap.groovy</code><p class="paragraph"/><div class="code"><pre>com.mycompany.Customer.metaClass.cleanUp = &#123;&#45;&#62;
 	<span class="java&#45;object">Integer</span> z = 0
 	z = <span class="java&#45;object">Integer</span>.parse(delegate.zipcode)
-	def a1 = <span class="java&#45;keyword">new</span> com.semaphore.zp4.StreetAddress(address: delegate.addressLine,
+	def a1 = <span class="java&#45;keyword">new</span> com.semaphorecorp.zp4.StreetAddress(address: delegate.addressLine,
 			city: delegate.city,
 			state: delegate.stateAbbreviation,
 			zipCode: z )
-	def za = a1.lookup()
+	def za = a.lookup()
 	<span class="java&#45;keyword">if</span> (za.certified == 'C') &#123;
-		def a2 = za.toStreetAddress()
+		def a2 = a.lookup().toStreetAddress()
 		delegate.addressLine = a2.address
 		delegate.city = a2.city
 		delegate.stateAbbreviation = a2.state
