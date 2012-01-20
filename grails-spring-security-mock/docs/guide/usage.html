@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>3 Usage 0.9</title>
+    <title>3 Usage 0.9.9</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -74,7 +74,7 @@ function addJsClass() {
 
                     <p><strong>Authors:</strong> Aaron J. Zirbes</p>
 
-                    <p><strong>Version:</strong> 0.9</p>
+                    <p><strong>Version:</strong> 0.9.9</p>
 
                     
                 </div>
@@ -98,7 +98,9 @@ This plugin exposes a rather large security hole in your application.  It is HIG
 	&#8230;
 &#125;</pre></div><p class="paragraph"/>where "Your name here" is the name of the user, "Your email address here" is the email address of the user, "your.username" is the username of the user, and "roles" is a list of roles you wish to be assigned to the user that will be automatically logged into your grails application.<p class="paragraph"/><h4>Remember</h4>
 This is a dangerous plugin.  You should only enable this plugin for development use.  The example above shows the configuration as being wrapped inside of the "development" closure in the Groovy.config file.<p class="paragraph"/>In your staging and production environments, make sure to set
-<div class="code"><pre>grails.plugins.springsecurity.mock.active = <span class="java&#45;keyword">false</span></pre></div><p class="paragraph"/>
+<div class="code"><pre>grails.plugins.springsecurity.mock.active = <span class="java&#45;keyword">false</span></pre></div>
+If you have the Spring Security LDAP plugin installed as well, but don't want to load roles from LDAP, make sure to set the following to disable LDAP role lookup.
+<div class="code"><pre>grails.plugins.springsecurity.ldap.active = <span class="java&#45;keyword">false</span></pre></div><p class="paragraph"/>
 
 
                 <div style="clear:both;margin-top:15px;"></div>

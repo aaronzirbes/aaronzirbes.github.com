@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>4 Configuration 0.9</title>
+    <title>4 Configuration 0.9.9</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -72,7 +72,7 @@ function addJsClass() {
 
                     <p><strong>Authors:</strong> Aaron J. Zirbes</p>
 
-                    <p><strong>Version:</strong> 0.9</p>
+                    <p><strong>Version:</strong> 0.9.9</p>
 
                     
                 </div>
@@ -87,7 +87,13 @@ This plugin exposes a rather large security hole in your application.  It is HIG
 </blockquote><p class="paragraph"/><blockquote class="note">
 All of these property overrides must be specified in <code>grails-app/conf/Config.groovy</code> using the <code>grails.plugins.springsecurity</code> suffix, for example
 <div class="code"><pre>grails.plugins.springsecurity.mock.username = 'aaronzirbes'</pre></div>
-</blockquote><p class="paragraph"/><p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Name</strong></th><th><strong class="bold">Default</strong></th><th><strong class="bold">Meaning</strong></th></tr><tr class="table-odd"><td>mock.active</td><td><code>false</code></td><td>whether the plugin is enabled or not (e.g. to disable per-environment)</td></tr><tr class="table-even"><td>mock.fullName</td><td>'Fake User Account'</td><td>the full name of the mock user being automatically logged in</td></tr><tr class="table-odd"><td>mock.email</td><td>'fake@example.org'</td><td>the email address of the mock user being automatically logged in</td></tr><tr class="table-even"><td>mock.username</td><td>'fakeuser'</td><td>the username of the mock user being automatically logged in</td></tr><tr class="table-odd"><td>mock.roles</td><td>'ROLE_USER', 'ROLE_ADMIN'</td><td>a collection of roles that will be automatically assigned to the mock user being auto-logged in to your application</td></tr></table><p class="paragraph"/>
+</blockquote><p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Name</strong></th><th><strong class="bold">Default</strong></th><th><strong class="bold">Meaning</strong></th></tr><tr class="table-odd"><td>mock.active</td><td><code>false</code></td><td>whether the plugin is enabled or not (e.g. to disable per-environment)</td></tr><tr class="table-even"><td>mock.fullName</td><td>'Fake User Account'</td><td>the full name of the mock user being automatically logged in</td></tr><tr class="table-odd"><td>mock.email</td><td>'fake<code>example.org'</td><td>the email address of the mock user being automatically logged in</td></tr><tr class="table-even"><td>mock.username</td><td>'fakeuser'</td><td>the username of the mock user being automatically logged in</td></tr><tr class="table-odd"><td>mock.roles</td><td>'ROLE_USER', 'ROLE_ADMIN'</td><td>a collection of roles that will be automatically assigned to the mock user being auto-logged in to your application</td></tr><tr class="table-even"><td>mock.load.dao</td><td></code>false<code></td><td>whether or not the plugin trys to load roles from GORM instead of the </code>mock.roles@ setting</td></tr></table><p class="paragraph"/><blockquote class="note">
+Configuration settings from spring-security-ldap that affect the behavior of this plugin
+</blockquote><p class="paragraph"/>If all three of these settings are configured and enabled, then the Mock plugin will attempt to load
+roles from LDAP rather than from the <code>mock.roles</code> configuration setting.<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Name</strong></th><th><strong class="bold">Default</strong></th><th><strong class="bold">Meaning</strong></th></tr><tr class="table-odd"><td>ldap.active</td><td><code>true</code></td><td>this must be set to true for spring-security-mock to load roles from LDAP</td></tr><tr class="table-even"><td>ldap.authorities.retrieveGroupRoles</td><td><code>true</code></td><td>this must be set to true for spring-security-mock to load roles from LDAP</td></tr><tr class="table-odd"><td>ldap.usernameMapper.userDnBase</td><td>none, must be set</td><td>this must be set to true for spring-security-mock to load roles from LDAP.  This will be used to build the userDn that will be used to search LDAP for roles associated with the user.  The full DN will be equivalent to "cn=${username},${userDnBase}"</td></tr></table><p class="paragraph"/><h2>Using a different User Details Service</h2><p class="paragraph"/>You can use any User Details Service with the Mock plugin as long as it implements <a href="../ref/Httpsgithubcomgrailspluginsgrailsspringsecuritycoreblobmastersrcjavaorgcodehausgroovygrailspluginsspringsecurity Grails User Details Servicejava/GrailsUserDetailsService.html" class="https://github.com/grails-plugins/grails-spring-security-core/blob/master/src/java/org/codehaus/groovy/grails/plugins/springsecurity/GrailsUserDetailsService.java">GrailsUserDetailsService</a>. This is accomplished by setting the <code>userDetailsService</code> in your <code>grails-app/conf/spring/resources.groovy</code> file.<p class="paragraph"/>For example:<p class="paragraph"/><div class="code"><pre>beans = &#123;
+   userDetailsService(com.mycompany.myapp.MyUserDetailsService)
+&#125;</pre></div><p class="paragraph"/>
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
