@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
-        <title>Grails Spring Security Shibboleth Native SP Plugin 0.9.16</title>
+        <title>Grails Spring Security Shibboleth Native SP Plugin 1.0.0</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8" />
         <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8" />
@@ -62,7 +62,7 @@ function addJsClass(el) {
                         <div class="project">
                             <h1>Grails Spring Security Shibboleth Native SP Plugin - Reference Documentation</h1>
                             <p><strong>Authors:</strong> Aaron J. Zirbes</p>
-                            <p><strong>Version:</strong> 0.9.16</p>
+                            <p><strong>Version:</strong> 1.0.0</p>
                             
                         </div>
 
@@ -104,6 +104,10 @@ The Shibboleth Native SP adds support for attributes exposed by a Native Shibbol
 <li>Initial public release 0.9.9</li>
 <ul class="star">
 <li>January 12th, 2012</li>
+</ul>
+<li>Version 1.0.0</li>
+<ul class="star">
+<li>January 20th, 2012</li>
 </ul></ul><p class="paragraph"/>
 
 
@@ -131,16 +135,23 @@ The Shibboleth Native SP adds support for attributes exposed by a Native Shibbol
 <li>Installed and configured to use the authentication passed to is by Apache</li>
 </ul>
 <li>Your application, compiled and deployed as a WAR</li>
-</ul><p class="paragraph"/>I run this stack on Ubuntu Servers, and all of my system installation and configuration documentation is publicly available through my <a href="http://wiki.umn.edu/main/AaronZirbes" target="blank">Wiki page hosted on the University of Minnesota Wiki server</a>.  Feel free to refer to this documentation to find implementation details and configuration examples.<p class="paragraph"/>When you get stuck, please check out the resources for more documentation and links.
+</ul><p class="paragraph"/>Reference configuration instructions for an Ubuntu based setup are available <a href="../ref/Httpswikiumnedu Main Tomcat6 Server On Ubuntu Server1004 LTS/here.html" class="https://wiki.umn.edu/Main/Tomcat6ServerOnUbuntuServer10_04LTS">here</a>.<p class="paragraph"/>More background information is available on the <a href="../ref/Httpswikishibbolethnetconfluencedisplay SHIB 2 Native SPJ ava Install/Internet2 Shibboleth Wiki.html" class="https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPJavaInstall">Internet2 Shibboleth Wiki</a>.
 
 
 
 <h1 id="installation">3 Installation</h1>
-<h1>Installing the Plugin</h1><p class="paragraph"/>This plugin depends on the Spring Security Core plugin, so you have to have that installed before this plugin will work.<p class="paragraph"/>To install this plugin, simply issue the following command from within your project<p class="paragraph"/><div class="code"><pre>grails install&#45;plugin spring&#45;security&#45;shibboleth&#45;<span class="java&#45;keyword">native</span>&#45;sp</pre></div><p class="paragraph"/>As mentioned previously, this plugin only works when deployed as a WAR to a shibboleth aware servlet container, so it is HIGHLY recommended to use this plugin in conjunction with the Spring Security Mock plugin.  You can install that plugin via the following command.<p class="paragraph"/><div class="code"><pre>grails install&#45;plugin spring&#45;security&#45;mock</pre></div><p class="paragraph"/>For details on using the <code>spring-security-mock</code> plugin, see the <a href="http://aaronzirbes.github.com/grails-spring-security-mock/" target="blank">documentation</a>.  You should only use the Mock plugin when you are doing development as it essentially bypasses security and automatically applys whatever roles you have assigned in your <code>Config.groovy</code> file.<p class="paragraph"/>
+<h1>Installing the Plugin</h1><p class="paragraph"/>To install this plugin, simply add the following to your <code>grails-app/conf/BuildConfig.groovy</code>
+<div class="code"><pre>plugins &#123;
+   // open&#45;ended syntax supported in Grails 2.0.0 and later
+   build ':spring&#45;security&#45;shibboleth&#45;<span class="java&#45;keyword">native</span>&#45;sp:&#91;1.0.0,)'
+   // or fixed version <span class="java&#45;keyword">for</span> the Grails 1.3.x series
+   //build ':spring&#45;security&#45;shibboleth&#45;<span class="java&#45;keyword">native</span>&#45;sp:1.0.0'
+&#125;</pre></div><p class="paragraph"/>or issue the following command from within your project<p class="paragraph"/><div class="code"><pre>grails install&#45;plugin spring&#45;security&#45;shibboleth&#45;<span class="java&#45;keyword">native</span>&#45;sp</pre></div><p class="paragraph"/>As mentioned previously, this plugin only works when deployed as a WAR to a shibboleth aware servlet container, so it is recommended that you use this plugin in conjunction with the <a href="http://grails.org/plugin/spring-security-mock" target="blank">Spring Security Mock</a> plugin, or some other method of authentication when running in development mode. 
+
 
 
 <h1 id="configuration">4 Configuration</h1>
-<h1>Configuring the plugin</h1><p class="paragraph"/>The plugin has defauls that are set up to work out of the box with the Shibboleth IdP implementation used at the University of Minnesota.  If your IdP diverges from this setup, you'll have to change the settings in use by this plugin.<p class="paragraph"/>All of the configuration settings are set in your <code>grails-app/conf/Config.groovy</code> file.<p class="paragraph"/><h2>Configuring for Development</h2><p class="paragraph"/>As stated before, this plugin only works in production and/or test, and you should supplement this plugin with the spring-security-mock plugin for development.  The way to set up this configuration is as follows:<p class="paragraph"/><div class="code"><pre>environments &#123;
+<h1>Configuring the plugin</h1><p class="paragraph"/>The plugin has defauls that are set up to work out of the box with the Shibboleth IdP implementation used at the University of Minnesota.  If your IdP diverges from this setup, you'll have to change the settings in use by this plugin.<p class="paragraph"/>All of the configuration settings are set in your <code>grails-app/conf/Config.groovy</code> file.<p class="paragraph"/><h2>Configuring for Development</h2><p class="paragraph"/>As stated before, this plugin only works in production and/or test, and you should supplement this plugin with the spring-security-mock plugin, or some other authentication method for development.  The way to set up this configuration is as follows:<p class="paragraph"/><div class="code"><pre>environments &#123;
     production &#123;
 	&#8230;
         // Enable shibboleth, disable mock
@@ -166,7 +177,14 @@ The Shibboleth Native SP adds support for attributes exposed by a Native Shibbol
 &#125;</pre></div><p class="paragraph"/><h2>Configuring for your IdP</h2><p class="paragraph"/><blockquote class="note">
 Any property overrides must be specified in <code>grails-app/conf/Config.groovy</code> using the <code>grails.plugins.springsecurity</code> suffix, for example
 <div class="code"><pre>grails.plugins.springsecurity.shibboleth.principalUsername.attribute = 'EPPN'</pre></div>
-</blockquote><p class="paragraph"/>There are several configuration options for the Shibbolet Natibe SP plugin. In practice the defaults are fine for most deployments and only a few will need to be overridden.<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Name</strong></th><th><strong class="bold">Default</strong></th><th><strong class="bold">Meaning</strong></th></tr><tr class="table-odd"><td>shibboleth.loginUrl</td><td>'/Shibboleth.sso/Login?target={0}'</td><td>The URL used by the Shibboleth Native SP to log users in.  The parameter <code>{0}</code> is replaced by the AuthenticationFilter URL.  You shouldn't need to modify this at all.</td></tr><tr class="table-even"><td>shibboleth.logoutUrl</td><td>'/Shibboleth.sso/Logout'</td><td>This is the default logout re-direct URL.  This will log the user out of the application in addition to logging out of the local Shibboleth SP instance.</td></tr><tr class="table-odd"><td>shibboleth.principalUsername.attribute</td><td>'EPPN'</td><td>This is the name of the principal attribute, usually the same as the username.  This is pretty standard, and shouldn't need modification.</td></tr><tr class="table-even"><td>shibboleth.authenticationMethod.attribute</td><td>'Shib-Authentication-Method'</td><td>This is the attribute that tells the application what method was used to authenticate the user.  This can be used by the ShibbolethUserDetailsService to assign specific roles based on authentication.</td></tr><tr class="table-odd"><td>shibboleth.identityProvider.attribute</td><td>'Shib-Identity-Provider'</td><td>This is the attribute that tells the application which IdP was used to authenticate the user.</td></tr><tr class="table-even"><td>shibboleth.authenticationInstant.attribute</td><td>'Shib-Authentication-Instant'</td><td>This is the attribute that is exposed by the IdP to tell the SP when the user was originally authenticated.</td></tr><tr class="table-odd"><td>shibboleth.roles.attribute</td><td><code>null</code></td><td>This is the attribute exposed by the IdP that contains any roles you wish to use in your application.  Typically these are filled in by grouper, or LDAP, or Active Directory.</td></tr><tr class="table-even"><td>shibboleth.roles.separator</td><td>','</td><td>This is the delimeter that separates the role names in the roles attribute</td></tr><tr class="table-odd"><td>shibboleth.roles.prefix</td><td>'SHIB_'</td><td>This is the prefix assigned to all of the roles pulles from the shibboleth roles attribute.  This helps prevent role name collisions with other roles used.</td></tr><tr class="table-even"><td>shibboleth.extraAttributes</td><td><code>null</code></td><td>This is a list of any extra attributes you want loaded into the ShibbolethAuthenticationToken that will be exposed via the Spring Secuirity services and tags for use in your application.</td></tr><tr class="table-odd"><td>shibboleth.authenticationMethod.roles</td><td><code>null</code></td><td>This is a map of 'ROLE_NAME': 'auth-method-string'' that allows the ShibbolethUserDetailsService to load specific roles based on the method of authentication.  This is useful to differentiate between guest logins, standard logins, two-factor authentication and the like.</td></tr><tr class="table-even"><td>remoteAddress.roles</td><td><code>null</code></td><td>This is used to automatically apply roles to the user based only on their origin IP address.  This  takes a parameter of a Map of role names, followed by a list of IP subnets.  This is useful to assign roles to users based on if they are logged in from your intrantet, VPN, or wireless so you can restrict authentication methods depending on origin using nothing but security annotations.</td></tr></table><p class="paragraph"/><h2>Configuring injected roles for your app</h2><p class="paragraph"/>The following examples show how to use the roles attributes above to ensure that roles assigned to your authenticated users based on your configuration.<p class="paragraph"/>Sets the roles attribute to pull from grouper
+</blockquote><p class="paragraph"/>There are several configuration options for the Shibbolet Natibe SP plugin. In practice the defaults are fine for most deployments and only a few will need to be overridden.<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Name</strong></th><th><strong class="bold">Default</strong></th><th><strong class="bold">Meaning</strong></th></tr><tr class="table-odd"><td>remoteAddress.roles</td><td><code>null</code></td><td>This is used to automatically apply roles to the user based only on their origin IP address.  This  takes a parameter of a Map of role names, followed by a list of IP subnets.  This is useful to assign roles to users based on if they are logged in from your intrantet, VPN, or wireless so you can restrict authentication methods depending on origin using nothing but security annotations.</td></tr><tr class="table-even"><td>shibboleth.authenticationInstant.attribute</td><td>'Shib-Authentication-Instant'</td><td>This is the attribute that is exposed by the IdP to tell the SP when the user was originally authenticated.</td></tr><tr class="table-odd"><td>shibboleth.authenticationMethod.attribute</td><td>'Shib-Authentication-Method'</td><td>This is the attribute that tells the application what method was used to authenticate the user.  This can be used by the ShibbolethUserDetailsService to assign specific roles based on authentication.</td></tr><tr class="table-even"><td>shibboleth.authenticationMethod.roles</td><td><code>null</code></td><td>This is a map of 'ROLE_NAME': 'auth-method-string'' that allows the ShibbolethUserDetailsService to load specific roles based on the method of authentication.  This is useful to differentiate between guest logins, standard logins, two-factor authentication and the like.</td></tr><tr class="table-odd"><td>shibboleth.email.attribute</td><td><code>null</code></td><td>The name of the attribute to use for the <code>email</code> address in the UserDetails object</td></tr><tr class="table-even"><td>shibboleth.extraAttributes</td><td><code>null</code></td><td>This is a list of any extra attributes you want loaded into the ShibbolethAuthenticationToken that will be exposed via the Spring Secuirity services and tags for use in your application.</td></tr><tr class="table-odd"><td>shibboleth.fullName.attribute</td><td><code>null</code></td><td>The name of the attribute to use for the <code>fullName</code> in the UserDetails object</td></tr><tr class="table-even"><td>shibboleth.identityProvider.attribute</td><td>'Shib-Identity-Provider'</td><td>This is the attribute that tells the application which IdP was used to authenticate the user.</td></tr><tr class="table-odd"><td>shibboleth.loginUrl</td><td>'/Shibboleth.sso/Login?target={0}'</td><td>The URL used by the Shibboleth Native SP to log users in.  The parameter <code>{0}</code> is replaced by the AuthenticationFilter URL.  You shouldn't need to modify this at all.</td></tr><tr class="table-even"><td>shibboleth.logoutUrl</td><td>'/Shibboleth.sso/Logout'</td><td>This is the default logout re-direct URL.  This will log the user out of the application in addition to logging out of the local Shibboleth SP instance.</td></tr><tr class="table-odd"><td>shibboleth.principalUsername.attribute</td><td>'EPPN'</td><td>This is the name of the principal attribute, usually the same as the username.  This is pretty standard, and shouldn't need modification.</td></tr><tr class="table-even"><td>shibboleth.roles.attribute</td><td><code>null</code></td><td>This is the attribute exposed by the IdP that contains any roles you wish to use in your application.  Typically these are filled in by grouper, or LDAP, or Active Directory.</td></tr><tr class="table-odd"><td>shibboleth.roles.loadFromUserDetailsService</td><td><code>false</code></td><td>Whether or not to load additional roles from the <code>userDetailService</code> bean.  The default <code>userDetailService</code> in spring-security-core is the DAO (GORM) User Details Service.</td></tr><tr class="table-even"><td>shibboleth.roles.prefix</td><td>'SHIB_'</td><td>This is the prefix assigned to all of the roles pulles from the shibboleth roles attribute.  This helps prevent role name collisions with other roles used.</td></tr><tr class="table-odd"><td>shibboleth.roles.separator</td><td>','</td><td>This is the delimeter that separates the role names in the roles attribute</td></tr><tr class="table-even"><td>shibboleth.useShibbolethUserDetails</td><td><code>true</code></td><td>Whether or not to use the Shibboleth User Details Service, or a different <code>UserDetailsService</code>.  If set to <code>false</code> then the plugin will load the user details from what ever UserDetailsService is set.  The default in spring-security-core is the DAO (GORM) UserDetailsService.</td></tr><tr class="table-odd"><td>shibboleth.username.attribute</td><td>'EPPN'</td><td>The name of the attribute to use for the username</td></tr><tr class="table-even"><td>shibboleth.username.stripAtDomain</td><td><code>false</code></td><td>Remove the '@domain.com' from the username attribute, commonly found in an EPPN if you don't wish to use it.  This breaks support for federated applications.</td></tr></table><p class="paragraph"/><blockquote class="note">
+Configuration settings from spring-security-ldap that affect the behavior of this plugin
+</blockquote><p class="paragraph"/>If all three of these settings are configured and enabled, then the Shibboleth plugin will attempt to load
+roles from LDAP rather than from the <code>shibboleth.roles.attribute</code> configuration setting.<p class="paragraph"/><table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Name</strong></th><th><strong class="bold">Default</strong></th><th><strong class="bold">Meaning</strong></th></tr><tr class="table-odd"><td>ldap.active</td><td><code>true</code></td><td>this must be set to true for spring-security-shibboleth to load roles from LDAP</td></tr><tr class="table-even"><td>ldap.authorities.retrieveGroupRoles</td><td><code>true</code></td><td>this must be set to true for spring-security-shibboleth to load roles from LDAP</td></tr><tr class="table-odd"><td>ldap.usernameMapper.userDnBase</td><td>none, must be set</td><td>this must be set to true for spring-security-shibboleth to load roles from LDAP.  This will be used to build the userDn that will be used to search LDAP for roles associated with the user.  The full DN will be equivalent to "cn=${username},${userDnBase}"</td></tr></table><p class="paragraph"/><h2>Using a different User Details Service</h2><p class="paragraph"/>You can use any User Details Service with the Shibboleth plugin as long as it implements <a href="../ref/Httpsgithubcomgrailspluginsgrailsspringsecuritycoreblobmastersrcjavaorgcodehausgroovygrailspluginsspringsecurity Grails User Details Servicejava/GrailsUserDetailsService.html" class="https://github.com/grails-plugins/grails-spring-security-core/blob/master/src/java/org/codehaus/groovy/grails/plugins/springsecurity/GrailsUserDetailsService.java">GrailsUserDetailsService</a>. This is accomplished by setting the <code>userDetailsService</code> in your <code>grails-app/conf/spring/resources.groovy</code> file.<p class="paragraph"/>For example:<p class="paragraph"/><div class="code"><pre>beans = &#123;
+   userDetailsService(com.mycompany.myapp.MyUserDetailsService)
+&#125;</pre></div><p class="paragraph"/>
+<h2>Configuring injected roles for your app</h2>
+The following examples show how to use the roles attributes above to ensure that roles assigned to your authenticated users based on your configuration.<p class="paragraph"/>Sets the roles attribute to pull from grouper
 <div class="code"><pre>grails.plugins.springsecurity.shibboleth.roles.attribute = 'Shib&#45;Grouper&#45;Roles'</pre></div><p class="paragraph"/>Sets the separator for the grouper attribute to a comma
 <div class="code"><pre>grails.plugins.springsecurity.shibboleth.roles.separator = ','</pre></div><p class="paragraph"/>Tells the plugin to prefix all roles with 'SHIB_', for example, 'students' would become 'ROLE_SHIB_students'
 <div class="code"><pre>grails.plugins.springsecurity.shibboleth.roles.prefix = 'SHIB_'</pre></div><p class="paragraph"/>This maps IdPs to authentication methods to allow for security annotations
@@ -185,8 +203,7 @@ last tells the app if the user is coming in from within the department.
 <div class="code"><pre>grails.plugins.springsecurity.remoteAddress.roles = &#91;
     'ROLE_IP_UMN_VPN': &#91;'134.84.0.0/23'&#93;,
     'ROLE_IP_UMN_CAMPUS': &#91;'160.94.0.0/16', '128.101.0.0/16', '134.84.0.0/16'&#93;,
-    'ROLE_IP_UMN_DEPT': &#91;'160.94.111.0/25', '128.101.11.222/25', '134.84.111.222/26'&#93; &#93;</pre></div><p class="paragraph"/><h2>A Sample Configuration</h2><p class="paragraph"/>What follows is a complete example configuration file. I hope it helps you.<p class="paragraph"/><div class="code"><pre>/ use <span class="java&#45;keyword">this</span> to simulate a shibboleth environment when your app is running in
-// development mode.<p class="paragraph"/>// Used by Controllers
+    'ROLE_IP_UMN_DEPT': &#91;'160.94.111.0/25', '128.101.11.222/25', '134.84.111.222/26'&#93; &#93;</pre></div><p class="paragraph"/><h2>A Sample Configuration</h2><p class="paragraph"/>What follows is a complete example configuration from <code>grails-app/conf/Config.groovy</code>.<p class="paragraph"/><div class="code"><pre>// Used by Controllers
 grails.plugins.springsecurity.shibboleth.loginUrl = '/Shibboleth.sso/Login?target=&#123;0&#125;'
 grails.plugins.springsecurity.shibboleth.logoutUrl = '/Shibboleth.sso/Logout'<p class="paragraph"/>// Token Attributes
 grails.plugins.springsecurity.shibboleth.principalUsername.attribute = 'EPPN'
@@ -205,11 +222,11 @@ grails.plugins.springsecurity.shibboleth.identityProvider.roles = &#91;
 // <span class="java&#45;keyword">for</span> securing based on method
 grails.plugins.springsecurity.shibboleth.authenticationMethod.roles = &#91;
     'ROLE_AUTH_METHOD_STANDARD': 'urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified',
-    'ROLE_IP_UMN_DEPT': &#91;'160.94.111.0/25', '128.101.11.222/25', '134.84.111.222/26'&#93; &#93;</pre></div><p class="paragraph"/><p class="paragraph"/>
+    'ROLE_IP_UMN_DEPT': &#91;'160.94.111.0/25', '128.101.11.222/25', '134.84.111.222/26'&#93; &#93;</pre></div><p class="paragraph"/>
 
 
 <h1 id="troubleshooting">5 Troubleshooting</h1>
-<h1>Troubleshooting your install</h1><p class="paragraph"/>Most of the problems surrounding getting your application working with this plugin are attributed to the "Shibboleth SP &#62; mod_shib &#62; Apache &#62; mod_jk &#62; Tomcat" stack.<p class="paragraph"/><h2>A demo application</h2><p class="paragraph"/>To help you see what your servlet container can see and help you diagnose problems, I have created a shibboleth-demo application that you can compile and deploy.  It will give you a pretty good view of what is going on within your servlet container.<p class="paragraph"/>You can get the application from <a href="http://github.com/aaronzirbes/grails-shibboleth-demo" target="blank">github</a>.  The command to clone it to your local machine is:<p class="paragraph"/><div class="code"><pre>git clone git@github.com:aaronzirbes/grails&#45;shibboleth&#45;demo.git</pre></div><p class="paragraph"/>You can build it by running 
+<h1>Troubleshooting your install</h1><p class="paragraph"/>Most of the time, problems surrounding getting your application working with this plugin are attributed to the "Shibboleth SP &#62; mod_shib &#62; Apache &#62; mod_jk &#62; Tomcat" stack.<p class="paragraph"/><h2>A demo application</h2><p class="paragraph"/>To help you see what your servlet container can see and help you diagnose problems, I have created a shibboleth-demo application that you can compile and deploy.  It will give you a pretty good view of what is going on within your servlet container.<p class="paragraph"/>You can get the application from <a href="http://github.com/aaronzirbes/grails-shibboleth-demo" target="blank">github</a>.  The command to clone it to your local machine is:<p class="paragraph"/><div class="code"><pre>git clone git@github.com:aaronzirbes/grails&#45;shibboleth&#45;demo.git</pre></div><p class="paragraph"/>You can build it by running:
 <div class="code"><pre>grails war shibdemo</pre></div><p class="paragraph"/>...and then deploy it to your shibboleth aware servelt container (tomcat).<p class="paragraph"/><h2>Configuration of exposed attributes</h2><p class="paragraph"/>If you've deployed the demo application, you can see all of the exposed attributes from your server.  You should double-check these to make sure that these attributes match what is set in your Config.groovy file.<p class="paragraph"/><h2>Log files</h2><p class="paragraph"/>Often you can check the log files to see what's going on with your server.
 Useful log files include
 <ul class="star">
@@ -217,7 +234,16 @@ Useful log files include
 <li>/var/log/tomcat6/*.log</li>
 <li>/var/log/apache/*.log</li>
 <li>/var/log/syslog</li>
-</ul><p class="paragraph"/><h2>Other languages</h2><p class="paragraph"/>Sometimes it's helpful to write a simple script in another language to see if apache can see the attributes exposed from shibboleth.  Anything will work really.  PHP, Python, Perl, Ruby, etc...<p class="paragraph"/><h2>Back to the Documentation</h2><p class="paragraph"/>Often reviewing the systems installation and configuration documentation can help you diagnose quite a few problems.<p class="paragraph"/><h2>Check the resources</h2><p class="paragraph"/>If all else fails, check the Resources section, this has links to quite a bit of documentation.
+</ul><p class="paragraph"/><h3>Grails Loggging</h3><p class="paragraph"/>You can enable debug level logging in grails by adding the following to your <code>grails-app/conf/Config.groovy</code> file
+<div class="code"><pre>log4j = &#123;
+	&#8230;
+    debug  'edu.umn.shibboleth.sp'
+	&#8230;
+&#125;</pre></div>
+Other logging packages that may be of interest are
+<div class="code"><pre>org.springframework.security.ldap
+org.codehaus.groovy.grails.plugins.springsecurity.ldap</pre></div><p class="paragraph"/><h2>Other languages</h2><p class="paragraph"/>Sometimes it's helpful to write a simple script in another language to see if apache can see the attributes exposed from shibboleth.  Anything will work really.  PHP, Python, Perl, Ruby, etc...<p class="paragraph"/>Usually the following PHP script (<code>index.php</code>) is sufficient to see all the shibboleth attributes.
+<div class="code"><pre>&#60;? php phpinfo(); ?&#62;</pre></div><p class="paragraph"/><h2>Check the resources</h2><p class="paragraph"/>If all else fails, check the Resources section, this has links to quite a bit of documentation.
 You can also try posting your question to the mailing lists.<p class="paragraph"/>If you've found a bug in the application, or have a feature you want that it doesn't support, please feel free to submit an issue via the GitHub page, and I'll see what I can do to help.
 
 
@@ -225,24 +251,28 @@ You can also try posting your question to the mailing lists.<p class="paragraph"
 <h1 id="resources">6 Resources</h1>
 <h1>Other Helpful Resources</h1><p class="paragraph"/>The following are resources that I have found helpful when setting up Shibboleth, or Shibboleth aware products such as Apache, or the Servlet container.<p class="paragraph"/><h2>Web Links</h2>
 <ul class="star">
-<li>Shibboleth SP</li>
-<li>mod_shib</li>
-<li>Apache</li>
-<li>mod_jk</li>
-<li>Tomcat</li>
-<li>Spring Security</li>
-<li>Grails Spring Security Core Plugin</li>
-<li>Spring Security Mock Plugin</li>
+<li><a href="../ref/Httpswikishibbolethnetconfluencedisplay SHIB 2 Native SPC onfiguration/Shibboleth SP.html" class="https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPConfiguration">Shibboleth SP</a></li>
+<ul class="star">
+<li><a href="../ref/Httpswikiumnedu Main Tomcat6 Server On Ubuntu Server1004 LTS/Ubuntu specific SP install guide.html" class="https://wiki.umn.edu/Main/Tomcat6ServerOnUbuntuServer10_04LTS">Ubuntu specific SP install guide</a></li>
+</ul>
+<li><a href="../ref/Httpswikishibbolethnetconfluencedisplay SHIB 2 Native SPA pache Config/mod_shib.html" class="https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPApacheConfig">mod_shib</a></li>
+<li><a href="http://httpd.apache.org/docs/" target="blank">Apache</a></li>
+<li><a href="http://tomcat.apache.org/connectors-doc/" target="blank">mod_jk</a></li>
+<li><a href="http://tomcat.apache.org/tomcat-7.0-doc/index.html" target="blank">Tomcat</a></li>
+<li><a href="http://static.springsource.org/spring-security/site/reference.html" target="blank">Spring Security</a></li>
+<li><a href="http://grails-plugins.github.com/grails-spring-security-core/docs/manual/" target="blank">Grails Spring Security Core Plugin</a></li>
+<li><a href="http://aaronzirbes.github.com/grails-spring-security-mock/" target="blank">Spring Security Mock Plugin</a></li>
 </ul><p class="paragraph"/><h2>Mailing Lists</h2>
 <ul class="star">
-<li>Grails Users</li>
-<li>Groovy Users of Minnesota</li>
-</ul><p class="paragraph"/><h2>User Groups</h2>
+<li><a href="http://grails.1312388.n4.nabble.com/" target="blank">Grails Users</a></li>
 <ul class="star">
-<li>Groovy Users of Minnesota</li>
-<li>GR8 in the US</li>
-<li>Groovy and Grails Exchange</li>
-</ul><p class="paragraph"/>
+<li><a href="http://groups.google.com/group/groovymn" target="blank">Groovy Users of Minnesota</a></li>
+</ul></ul><p class="paragraph"/><h2>User Groups</h2>
+<ul class="star">
+<li><a href="http://grails.org/User+Groups" target="blank">Many More</a></li>
+<ul class="star">
+<li><a href="http://groovy.mn/" target="blank">Groovy Users of Minnesota</a></li>
+</ul></ul><p class="paragraph"/>
 
                     </div>
                 </td>
