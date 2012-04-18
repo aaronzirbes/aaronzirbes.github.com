@@ -1,0 +1,19 @@
+/* humanstxt.org */
+
+/* TEAM */
+  Senior Applications Developer
+  Site: zirbes.org
+  Twitter: aaronzirbes
+  Location: Minneapolis, MN
+
+/* THANKS */
+  http://html5boilerplate.com/`
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software:
+	ViM 7.3
+	GIMP 2.6
+	Google Chrome 18
+
