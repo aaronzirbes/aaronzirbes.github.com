@@ -104,4 +104,46 @@ td { vertical-align: top; }
 
 header {
 	background-color: #EFE;
+	width: 960px;
+	margin-top: 0.3em;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+
+	   -moz-box-shadow: 0 0 9px 1px #ddd;
+	-webkit-box-shadow: 0 0 9px 1px #ddd;
+	        box-shadow: 0 0 9px 1px #ddd;
+}
+
+footer {
+	background-color: #EFE;
+	width: 960px;
+	margin-top: 0.3em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+
+	   -moz-box-shadow: 0 0 9px 1px #ddd;
+	-webkit-box-shadow: 0 0 9px 1px #ddd;
+	        box-shadow: 0 0 9px 1px #ddd;
+}
+
+body {
+	background-color: #333;
+}
+
+section#main-content {
+	width: 960px;
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+
+	   -moz-box-shadow: 0 0 9px 1px #ddd;
+	-webkit-box-shadow: 0 0 9px 1px #ddd;
+	        box-shadow: 0 0 9px 1px #ddd;
 }

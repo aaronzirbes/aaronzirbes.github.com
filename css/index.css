@@ -1,0 +1,50 @@
+h2.me img {
+	margin-left: 32px;
+	margin-right: 32px;
+}
+
+ul#ramblings {
+	list-style: none;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 0 0 0;
+}
+
+ul#ramblings li:hover {
+	background-color: #dfd;
+}
+ul#ramblings li {
+	display: inline-block;
+	text-align: center;
+	width: 290px;
+	height: 290px;
+	padding-top: 24px;
+	margin: 10px;
+	vertical-align: top;
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+}
+
+div#mncc {
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+.tilelink:hover {
+	background-color: #dfd;
+}
+
+.tilelink {
+	display: inline-block;
+	text-align: center;
+	width: 290px;
+	height: 290px;
+	padding-top: 24px;
+	margin: 10px;
+	vertical-align: top;
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+}
