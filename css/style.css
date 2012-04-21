@@ -142,8 +142,13 @@ section#main-content {
 	margin-right: auto;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
+	padding-bottom: 320px;
 
 	   -moz-box-shadow: 0 0 9px 1px #ddd;
 	-webkit-box-shadow: 0 0 9px 1px #ddd;
 	        box-shadow: 0 0 9px 1px #ddd;
+	
+	background-image: url("../img/zirbes-org-background.png");
+	background-position: bottom;
+	background-repeat: no-repeat;
 }

@@ -10,8 +10,8 @@
   <meta name="description" content="">
 
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/projects.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/projects.css">
 
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
@@ -24,7 +24,7 @@
   <section id="main-content">
 
     <p>Minneapolis, MN 55418<br/>
-	Aaron <img src="/img/atsymbol.png" /> Zirbes <img src="/img/dotorgsymbol.png"/></p>
+	Aaron <img src="../img/atsymbol.png" /> Zirbes <img src="../img/dotorgsymbol.png"/></p>
 
   	<h2>Grails Development</h2>
 	<p>Over four years of experience developing internal and open source 
@@ -72,6 +72,57 @@
 	<h2>Major Projects at the University of Minnesota since 1999</h2>
 
 	  <ul class="projects">
+		  <li class="project proj-plugin">
+			  <h3 class="project_name">Shibboleth SSO
+			  <span class="ref-opensource">
+				  <a class="ref-github" href="https://github.com/aaronzirbes/grails-spring-security-shibboleth-native-sp">
+					 aaronzirbes/grails-spring-security-shibboleth-native-sp</a></span>
+			  </h3>
+			  <span class="year">2012</span>;
+			  <span class="tech-grails" title="Grails">Grails</span>
+			  <summary><p>Spring Security extension plugin to allow grails applications 
+			  to authenticate using Shibboleth with Shibboleth Native SP aware web
+			  application servers.</p></summary>
+		  </li>
+		  <li class="project proj-plugin">
+			  <h3 class="project_name">Mock Authentication
+			  <span class="ref-opensource">
+				  <a class="ref-github" href="https://github.com/aaronzirbes/grails-spring-security-mock">
+					 aaronzirbes/grails-spring-security-mock</a></span>
+			  </h3>
+			  <span class="year">2012</span>;
+			  <span class="tech-grails" title="Grails">Grails</span>
+			  <summary><p>Spring Security extension plugin to allow grails applications 
+			  to mock up authentication to aid in an easier development experience, 
+			  and allow testing and development of applications when the primary mode
+			  of authentication and authorization is only available in production or
+			  staging environments.</p></summary>
+		  </li>
+		  <li class="project proj-app">
+			  <h3 class="project_name">Demographic Management</h3>
+			  <div class="generation">
+				  1st Gen: 
+				  <span class="year">2003</span>;
+				  <span class="tech-msaccess" title="MS Access">MS Access</span>,
+				  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  </div>
+			  <div class="generation">
+				  2nd Gen: 
+				  <span class="year">2006</span>;
+				  <span class="tech-vb" title="Visual Basic 6.0">Visual Basic 6.0</span>,
+				  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
+				  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  </div>
+			  <div class="generation">
+				  3rd Gen: 
+				  <span class="year">2012</span>;
+				  <span class="tech-grails" title="Grails">Grails</span>,
+				  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  </div>
+			  <summary><p>System to manage the entry of demographic details and
+			  contact information for thousands of active study participants 
+			  and potential recruits.</p></summary>
+		  </li>
 		  <li class="project proj-app">
 			  <h3 class="project_name">Asset Tracking</h3>
 			  <div class="generation">
@@ -96,66 +147,8 @@
 			  	staff and equipment information such as locations, 
 				usage dates and contract details.</p></summary>
 		  </li>
-
 		  <li class="project proj-app">
-			  <h3 class="project_name">Bin Mover</h3>
-			  <span class="year">2001</span>;
-			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
-			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <summary><p>Enterprise application used by the division to track upwards of 100,000
-			  patient charts across campus and hospitals.  The application also serves as a work
-			  flow system to track study work flow processes and ensure that cases are routed
-			  according to study protocol.</p></summary>
-		  </li>
-
-		  <li class="project proj-app">
-			  <h3 class="project_name">Diagnostic Treatment and Followup System</h3>
-			  <span class="year">2001</span>;
-			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
-			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <summary><p>Enterprise application used by multiple large-scale cancer prevention studies
-			  to track cancer screening results, initiate followup, manage medical records requests,
-			  reminders, and screening results delivery to study subjects and primary care
-			  physicians.</p></summary>
-		  </li>
-		  <li class="project proj-app">
-			  <h3 class="project_name">Study Participant Lookup</h3>
-			  <span class="year">2000</span>;
-			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
-			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <summary><p>Search and reporting system to facilitate locating
-			  study subjects from a database over over 1.5 million people,
-			  and providing person-centric drill down views of all study data 
-			  gathered during the years of enrollment for the particular study
-			  participant.</p></summary>
-		  </li>
-		  <li class="project proj-app">
-			  <h3 class="project_name">Duplicate Checker</h3>
-			  <span class="tech-csharp" title="C#">C#</span>,
-			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
-			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <span class="year">2003</span>;
-			  <summary><p>Highly optimized system to match incoming participant 
-			  recruitment data to match people against existing person records 
-			  with the database of over 1.5 million people to prevent duplication 
-			  of people, and to prevent multiple enrollment within a study.</p></summary>
-		  </li>
-		  <li class="project proj-app">
-			  <h3 class="project_name">Medical Records Authorization Tracking</h3>
-			  <span class="year">2003</span>;
-			  <span class="tech-csharp" title="C#">C#</span>,
-			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <summary><p>Used to generate, track and receipt medical records authorization 
-			  required by study protocol, HIPAA and other regulatory requirements for 
-			  multiple studies, some of them tracking over 20,000 participants.</p></summary>
-		  </li>
-		  <li class="project proj-app">
-		  <h3 class="project_name">Document Generation
+			  <h3 class="project_name">Document Generation
 			  <span class="ref-opensource">
 				  <a class="ref-github" href="https://github.com/ncs-grails/ncs-case-management">
 					 ncs-grails/ncs-case-management</a></span>
@@ -187,29 +180,19 @@
 			  documents, all of which are tracked and can be regenerated within 
 			  the system.</p></summary>
 		  </li>
-		  <li class="project proj-app">
-			  <h3 class="project_name">Appointment Scheduling</h3>
-			  <span class="year">2004</span>;
-			  <span class="tech-vb" title="Visual Basic 6.0">Visual Basic 6.0</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <summary><p>System used to schedule hundreds of thousands of cancer
-			  screening appointments for many different studies.</p></summary>
+		  <li class="project proj-doc">
+			  <h3 class="project_name">HIPAA Security Plan</h3>
+			  <span class="year">2011</span>;
+			  <summary><p>Development of a HIPAA compliant security plan allowing
+			  operation production operation of a HIPAA compliant computing 
+			  environment.</p></summary>
 		  </li>
 		  <li class="project proj-app">
-			  <h3 class="project_name">Incentive Reimbursement</h3>
-			  <span class="year">2004</span>;
-			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <summary><p>Used to track the acceptance and distribution of various
-			  kinds of study incentives such as taxi vouchers, milage reimbursement,
-			  and cash incentives across multiple studies.</p></summary>
-		  </li>
-		  <li class="project proj-app">
-		  <h3 class="project_name">Secure Messaging
-			  <span class="ref-opensource">
-				  <a class="ref-github" href="https://github.com/ncs-grails/ncs-secure-mail">
-					 ncs-grails/ncs-secure-mail</a></span>
-		 </h3>
+			  <h3 class="project_name">Secure Messaging
+				  <span class="ref-opensource">
+					  <a class="ref-github" href="https://github.com/ncs-grails/ncs-secure-mail">
+						 ncs-grails/ncs-secure-mail</a></span>
+			 </h3>
 			  <div class="generation">
 				  1st Gen: 
 				  <span class="year">2006</span>;
@@ -262,29 +245,20 @@
 			  tasks, instrument completion formation and calling queues.</p></summary>
 		  </li>
 		  <li class="project proj-app">
-			  <h3 class="project_name">Demographic Management</h3>
-			  <div class="generation">
-				  1st Gen: 
-				  <span class="year">2003</span>;
-				  <span class="tech-msaccess" title="MS Access">MS Access</span>,
-				  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  </div>
-			  <div class="generation">
-				  2nd Gen: 
-				  <span class="year">2006</span>;
-				  <span class="tech-vb" title="Visual Basic 6.0">Visual Basic 6.0</span>,
-				  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
-				  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  </div>
-			  <div class="generation">
-				  3rd Gen: 
-				  <span class="year">2012</span>;
-				  <span class="tech-grails" title="Grails">Grails</span>,
-				  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  </div>
-			  <summary><p>System to manage the entry of demographic details and
-			  contact information for thousands of active study participants 
-			  and potential recruits.</p></summary>
+			  <h3 class="project_name">Clinic Chart Scanning</h3>
+			  <span class="year">2011</span>;
+			  <span class="tech-bash" title="Bourne Again Shell">BASH</span>,
+			  <span class="tech-python" title="Python">Python</span>
+			  <summary><p>Linux based high-speed image scanning and processing system used to scan, 
+			  post-process, and OCR over a half a million pages of clinic charts.</p></summary>
+		  </li>
+		  <li class="project proj-doc">
+			  <h3 class="project_name">FISMA Security Plan</h3>
+			  <span class="year">2010</span>;
+			  <summary><p>Creation and implementation of a level 3 FISMA security plan 
+			  that has been given an Authority to Operate by a government 
+			  sanctioned Granting Authority.
+			  </p></summary>
 		  </li>
 		  <li class="project proj-app">
 			  <h3 class="project_name">Slide Pathology Scanning and Tracking</h3>
@@ -306,52 +280,19 @@
 			  scans of the slides via integration with an Aperio digital pathology system.
 			  </p></summary>
 		  </li>
-		  <li class="project proj-app">
-		  <h3 class="project_name">E.T.L Processes and Automation
+		  <li class="project proj-plugin">
+			  <h3 class="project_name">Address Standardization
 			  <span class="ref-opensource">
-				  <a class="ref-github" href="https://github.com/ncs-grails/ncs-etl">
-					 ncs-grails/ncs-etl</a></span>
-		  </h3>
-			  <span class="tech-vb" title="Visual Basic 6.0">Visual Basic 6.0</span>,
-			  <span class="tech-csharp" title="C#">C#</span>,
-			  <span class="tech-bash" title="Bourne Again Shell">BASH</span>,
-			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
-			  <span class="tech-grails" title="Grails">Grails</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <span class="db-mysql" title="MySQL Server">MySQL Server</span>
-			  <summary><p>The creation of dozens of ETL processes throughout the years
-			  to automate the migration of data from sources ranging from incoming emails
-			  to XML data posted to RESTful web services into production database systems.
-			  </p></summary>
+				  <a class="ref-github" href="https://github.com/aaronzirbes/grails-address-lookup-zpfour">
+					 aaronzirbes/grails-address-lookup-zpfour</a></span>
+			 </h3>
+			  <span class="year">2010</span>;
+			  <span class="tech-grails" title="Grails">Grails</span>
+			  <summary><p>Plugin to provide a service and tag libraries to allow
+			  applications to easily standardize postal addresses by integrating
+			  with the ZP4 address standardization web service sold by the Semaphore
+			  corporation.</p></summary>
 		  </li>
-		  <li class="project proj-app">
-			  <h3 class="project_name">X-Ray Scanning and Management</h3>
-			  <span class="year">2007</span>;
-			  <span class="tech-csharp" title="C#">C#</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <summary><p>Managed the scanning and QA process for over 10,000
-			  X-Rays into a digital library system to aid in the creation of an
-			  automated X-Ray diagnosis and tumor detection system.</p></summary>
-		  </li>
-		  <li class="project proj-app">
-			  <h3 class="project_name">Clinic Chart Scanning</h3>
-			  <span class="year">2011</span>;
-			  <span class="tech-bash" title="Bourne Again Shell">BASH</span>,
-			  <span class="tech-python" title="Python">Python</span>,
-			  <summary><p>Linux based high-speed image scanning and processing system used to scan, 
-			  post-process, and OCR over a half a million pages of clinic charts.</p></summary>
-		  </li>
-		  <li class="project proj-app">
-			  <h3 class="project_name">Obituary Parsing and Notification</h3>
-			  <span class="year">2004</span>;
-			  <span class="tech-bash" title="Bourne Again Shell">BASH</span>,
-			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
-			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
-			  <summary><p>Automated process to load obituary data from many national and local
-			  newspapers to be parsed and standardized to automatically identify deceased
-			  study participants nightly for large studies.</p></summary>
-		  </li>
-
 		  <li class="project proj-plugin">
 			  <h3 class="project_name">Cookie Auth SSO</h3>
 			  <span class="year">2010</span>;
@@ -359,31 +300,12 @@
 			  <summary><p>ACEGI based plugin to allow grails applications to integrate with
 			  the University of Minnesota's cookie based Single-Sign-On system.</p></summary>
 		  </li>
-		  <li class="project proj-plugin">
-			  <h3 class="project_name">Shibboleth SSO
-			  <span class="ref-opensource">
-				  <a class="ref-github" href="https://github.com/aaronzirbes/grails-spring-security-shibboleth-native-sp">
-					 aaronzirbes/grails-spring-security-shibboleth-native-sp</a></span>
-			  </h3>
-			  <span class="year">2012</span>;
-			  <span class="tech-grails" title="Grails">Grails</span>
-			  <summary><p>Spring Security extension plugin to allow grails applications 
-			  to authenticate using Shibboleth with Shibboleth Native SP aware web
-			  application servers.</p></summary>
-		  </li>
-		  <li class="project proj-plugin">
-			  <h3 class="project_name">Mock Authentication
-			  <span class="ref-opensource">
-				  <a class="ref-github" href="https://github.com/aaronzirbes/grails-spring-security-mock">
-					 aaronzirbes/grails-spring-security-mock</a></span>
-			  </h3>
-			  <span class="year">2012</span>;
-			  <span class="tech-grails" title="Grails">Grails</span>
-			  <summary><p>Spring Security extension plugin to allow grails applications 
-			  to mock up authentication to aid in an easier development experience, 
-			  and allow testing and development of applications when the primary mode
-			  of authentication and authorization is only available in production or
-			  staging environments.</p></summary>
+		  <li class="project proj-system">
+			  <h3 class="project_name">Samba + LDAP to AD + RADIUS Conversion</h3>
+			  <span class="year">2010</span>;
+			  <summary><p>Migration of an LDAP backed Samba domain to a Windows 2008
+			  based Active Directory backed by RADIUS authentication in compliance 
+			  with university-wide centralized authentication policies.</p></summary>
 		  </li>
 		  <li class="project proj-plugin">
 			  <h3 class="project_name">Web Templating
@@ -397,49 +319,70 @@
 			  brand their grails application for the study, division, department, or
 			  project it is associated with.</p></summary>
 		  </li>
-		  <li class="project proj-plugin">
-			  <h3 class="project_name">Address Standardization
-			  <span class="ref-opensource">
-				  <a class="ref-github" href="https://github.com/aaronzirbes/grails-address-lookup-zpfour">
-					 aaronzirbes/grails-address-lookup-zpfour</a></span>
-			 </h3>
-			  <span class="year">2010</span>;
-			  <span class="tech-grails" title="Grails">Grails</span>,
-			  <summary><p>Plugin to provide a service and tag libraries to allow
-			  applications to easily standardize postal addresses by integrating
-			  with the ZP4 address standardization web service sold by the Semaphore
-			  corporation.</p></summary>
+		  <li class="project proj-app">
+			  <h3 class="project_name">X-Ray Scanning and Management</h3>
+			  <span class="year">2007</span>;
+			  <span class="tech-csharp" title="C#">C#</span>
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <summary><p>Managed the scanning and QA process for over 10,000
+			  X-Rays into a digital library system to aid in the creation of an
+			  automated X-Ray diagnosis and tumor detection system.</p></summary>
+		  </li>
+		  <li class="project proj-app">
+			  <h3 class="project_name">Obituary Parsing and Notification</h3>
+			  <span class="year">2004</span>;
+			  <span class="tech-bash" title="Bourne Again Shell">BASH</span>,
+			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <summary><p>Automated process to load obituary data from many national and local
+			  newspapers to be parsed and standardized to automatically identify deceased
+			  study participants nightly for large studies.</p></summary>
+		  </li>
+		  <li class="project proj-app">
+			  <h3 class="project_name">Appointment Scheduling</h3>
+			  <span class="year">2004</span>;
+			  <span class="tech-vb" title="Visual Basic 6.0">Visual Basic 6.0</span>,
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <summary><p>System used to schedule hundreds of thousands of cancer
+			  screening appointments for many different studies.</p></summary>
+		  </li>
+		  <li class="project proj-app">
+			  <h3 class="project_name">Incentive Reimbursement</h3>
+			  <span class="year">2004</span>;
+			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <summary><p>Used to track the acceptance and distribution of various
+			  kinds of study incentives such as taxi vouchers, milage reimbursement,
+			  and cash incentives across multiple studies.</p></summary>
 		  </li>
 		  <li class="project proj-lib">
 			  <h3 class="project_name">RTF Generation</h3>
 			  <span class="year">2003</span>;
-			  <span class="tech-vb" title="Visual Basic 6.0">Visual Basic 6.0</span>,
+			  <span class="tech-vb" title="Visual Basic 6.0">Visual Basic 6.0</span>
 			  <summary><p>Library to assist in the automated generation of RTF
 			  document from desktop and web applications.</p></summary>
 		  </li>
-		  <li class="project proj-doc">
-			  <h3 class="project_name">FISMA Security Plan</h3>
-			  <span class="year">2010</span>;
-			  <summary><p>Creation and implementation of a level 3 FISMA security plan 
-			  that has been given an Authority to Operate by a government 
-			  sanctioned Granting Authority.
-			  </p></summary>
+		  <li class="project proj-app">
+			  <h3 class="project_name">Duplicate Checker</h3>
+			  <span class="year">2003</span>;
+			  <span class="tech-csharp" title="C#">C#</span>,
+			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
+			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <summary><p>Highly optimized system to match incoming participant 
+			  recruitment data to match people against existing person records 
+			  with the database of over 1.5 million people to prevent duplication 
+			  of people, and to prevent multiple enrollment within a study.</p></summary>
 		  </li>
-		  <li class="project proj-doc">
-			  <h3 class="project_name">HIPAA Security Plan</h3>
-			  <span class="year">2011</span>;
-			  <summary><p>Development of a HIPAA compliant security plan allowing
-			  operation production operation of a HIPAA compliant computing 
-			  environment.</p></summary>
-		  </li>
-
-		  <li class="project proj-system">
-			  <h3 class="project_name">VAX/VMS to Linux Conversion</h3>
-			  <span class="year">2001</span>;
-			  <summary><p>Migration of core system services from a Digital MicroVAX/VMS
-			  cluster to a Linux server environment.  Systems migrated were authentication
-			  and authorization, FTP services, POP, IMAP and SMTP services, DNS
-			  service and DHCP services.</p></summary>
+		  <li class="project proj-app">
+			  <h3 class="project_name">Medical Records Authorization Tracking</h3>
+			  <span class="year">2003</span>;
+			  <span class="tech-csharp" title="C#">C#</span>,
+			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <summary><p>Used to generate, track and receipt medical records authorization 
+			  required by study protocol, HIPAA and other regulatory requirements for 
+			  multiple studies, some of them tracking over 20,000 participants.</p></summary>
 		  </li>
 		  <li class="project proj-system">
 			  <h3 class="project_name">Windows NT 4 to Samba Conversion</h3>
@@ -450,14 +393,68 @@
 			  by a Samba PDC backed by LDAP in addition to Samba print services and
 			  Samba file services.</p></summary>
 		  </li>
-		  <li class="project proj-system">
-			  <h3 class="project_name">Samba + LDAP to AD + RADIUS Conversion</h3>
-			  <span class="year">2010</span>;
-			  <summary><p>Migration of an LDAP backed Samba domain to a Windows 2008
-			  based Active Directory backed by RADIUS authentication in compliance 
-			  with university-wide centralized authentication policies.</p></summary>
+		  <li class="project proj-app">
+			  <h3 class="project_name">Bin Mover</h3>
+			  <span class="year">2001</span>;
+			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
+			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <summary><p>Enterprise application used by the division to track upwards of 100,000
+			  patient charts across campus and hospitals.  The application also serves as a work
+			  flow system to track study work flow processes and ensure that cases are routed
+			  according to study protocol.</p></summary>
+		  </li>
+		  <li class="project proj-app">
+			  <h3 class="project_name">Diagnostic Treatment and Followup System</h3>
+			  <span class="year">2001</span>;
+			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
+			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <summary><p>Enterprise application used by multiple large-scale cancer prevention studies
+			  to track cancer screening results, initiate followup, manage medical records requests,
+			  reminders, and screening results delivery to study subjects and primary care
+			  physicians.</p></summary>
 		  </li>
 
+		  <li class="project proj-system">
+			  <h3 class="project_name">VAX/VMS to Linux Conversion</h3>
+			  <span class="year">2001</span>;
+			  <summary><p>Migration of core system services from a Digital MicroVAX/VMS
+			  cluster to a Linux server environment.  Systems migrated were authentication
+			  and authorization, FTP services, POP, IMAP and SMTP services, DNS
+			  service and DHCP services.</p></summary>
+		  </li>
+
+		  <li class="project proj-app">
+			  <h3 class="project_name">Study Participant Lookup</h3>
+			  <span class="year">2000</span>;
+			  <span class="tech-asp" title="Active Server Pages">ASP</span>,
+			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <summary><p>Search and reporting system to facilitate locating
+			  study subjects from a database over over 1.5 million people,
+			  and providing person-centric drill down views of all study data 
+			  gathered during the years of enrollment for the particular study
+			  participant.</p></summary>
+		  </li>
+		  <li class="project proj-app">
+			  <h3 class="project_name">E.T.L Processes and Automation
+				  <span class="ref-opensource">
+					  <a class="ref-github" href="https://github.com/ncs-grails/ncs-etl">
+						 ncs-grails/ncs-etl</a></span>
+			  </h3>
+			  <span class="tech-vb" title="Visual Basic 6.0">Visual Basic 6.0</span>,
+			  <span class="tech-csharp" title="C#">C#</span>,
+			  <span class="tech-bash" title="Bourne Again Shell">BASH</span>,
+			  <span class="tech-tsql" title="Microsoft Transact-SQL">T-SQL</span>,
+			  <span class="tech-grails" title="Grails">Grails</span>,
+			  <span class="db-mssql" title="MS-SQL Server">SQL Server</span>
+			  <span class="db-mysql" title="MySQL Server">MySQL Server</span>
+			  <summary><p>The creation of dozens of ETL processes throughout the years
+			  to automate the migration of data from sources ranging from incoming emails
+			  to XML data posted to RESTful web services into production database systems.
+			  </p></summary>
+		  </li>
 	  </ul>
 
   </section>
