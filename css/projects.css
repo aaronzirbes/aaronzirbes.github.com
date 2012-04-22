@@ -101,3 +101,12 @@ span.db-pgsql{
 	padding-left: 18px; 
 }
 
+dl.strengths dd {
+	font-weight: bold;
+}
+dl.strengths dt {
+	float: left;
+	padding-right: 2em;
+	width: 2in;
+}
+
