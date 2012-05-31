@@ -62,7 +62,7 @@ span.tech-vbscript{
 	padding-left: 18px; 
 }
 span.tech-vb{
-	background-image: url(../img/tech-vb-16.png); 
+	background-image: url(../img/tech-vb6-16.png); 
 	background-repeat: no-repeat;
 	padding-left: 18px; 
 }
@@ -90,9 +90,23 @@ span.db-pgsql{
 }
 
 /* Project Reference */
-span.ref-github{
+.ref-opensource{
+	background-image: url(../img/open-source-16.png); 
+	background-repeat: no-repeat;
+	padding-left: 18px; 
+}
+.ref-github{
 	background-image: url(../img/colab-github-16.png); 
 	background-repeat: no-repeat;
 	padding-left: 18px; 
+}
+
+dl.strengths dd {
+	font-weight: bold;
+}
+dl.strengths dt {
+	float: left;
+	padding-right: 2em;
+	width: 2in;
 }
 
