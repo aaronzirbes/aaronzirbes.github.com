@@ -1,0 +1,70 @@
+==================================================================
+https://keybase.io/ajz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://zirbes.org
+  * I am ajz (https://keybase.io/ajz) on keybase.
+  * I have a public key with fingerprint 0A9A 9917 713D BC0B E718  A2BC 9DDC 53E1 8051 DD6C
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "0a9a9917713dbc0be718a2bc9ddc53e18051dd6c",
+            "host": "keybase.io",
+            "key_id": "9DDC53E18051DD6C",
+            "uid": "4535a0e39743574ef5e1d48f518ff000",
+            "username": "ajz"
+        },
+        "service": {
+            "hostname": "zirbes.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1397850755,
+    "expire_in": 157680000,
+    "prev": "1bbfbfd9e1cf15e127393c0fa1cc4c90f0798ed270308aa8b2a1713cb172c2ee",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+owGbwMvMwMVYfibxLcefj6qMpw+8SmIIDmxqrlZKyk+pVLKqVspOBVNpmXnpqUUF
+RZl5JUpWSgaJlomWlobm5obGKUnJBkmp5oYWiUZJyZYpKcmmxqmGFgamhikpZslK
+OkoZ+cUgHUBjkhKLU/Uy84FiQE58ZgpQ1NLFxdnU2BWs3sXFzBkoVwqWMDE1Nk00
+SDW2NDcxNjU3SU0zTTVMMbFIMzW0SEszMDAAKSxOLcpLzE0Fqk7MqlKq1VECCpRl
+JqeCnAuyFSpZlVmUlFqsl1+UDtRUUJRfkp+cnwMUzygpKbACaSupLACpK09Nioea
+EJ+UmZcC9DBQQ1lqUXFmfp6SlSFQZXJJJshIQ6CzLEwNzE1NdZRSKwoyi1LjM0Eq
+TM3NLIBuMwBZk1oGNNIwKSktKS3FMtUwOc0Q6AMjc2NL42SDtETD5GSTZEuDNANz
+S4vUFCNzA2MDi8REiySjRENgkCYnGZobJRulpiqB/FSYl69kZQx0ZmI60MjizPS8
+xJLSolSl2k4mGRYGRi4GNlYmUJQxcHEKwCKy8Rr/f3e2xVInXDg1D13wz7zucGux
+iXf1iiO97VW1W/8y8uouuMJm+riI0+mTzbm8uGKB7AUmHwq9LR2N2K28un98dH/7
+46LWpPikV8qlC+xnH79yev7fNexvztnuWF1jMGeZSaeuhppoKMPOtqKfJwINv6iu
+6L78NJktIG/uqvPdreoHpoitfPOQv9Lp4sX1jJf27uTLOCDrraPw5Da3uyfrCWG3
+f+Ja/67cyX/Ku1Whl+O26M4HjXMPbCjSvcQaLvDl4HYB02Tn1/tiPnMd6t755umS
+ysvH/3PFWW80L6njmj35ZGrEyeaz7InW397smVpvybwi2mjOtDzfgi8cbWsupf+U
+mP/oOuetuMe1T1rtjJnErN5Fi/H0fCn8OkvyS5CoSfDVby+zlS3L2DtS/dteThFT
+sTqrOvftd2WeFIW1hofUGWafFc+x8n5gYffKTm7X9r7LvMcEXnYpzc398XpxV/GK
+x8sSv7225RCZuUR921/B/O13HzYkf1juP/9ltlTPZ48pgWfZ3wdx8D3ZfEt4effB
+46v+iZ69dTtxkfy8cBuhy8KXxY8+aVhwj3X3hxp+rf8c5gvDD55f0av4/OjxwDXp
+UtEL7vruspmZU7EkwuWus/Sbtxs+2e6dbr7nwHPn05E6ep5v1x2e2TSTTXHPpb5L
+y4VbfgnlsxZOZXBat9DYO/DfXDt7renHg6QlXq+8dd6IMbQqVOpE2U2r6fMB
+=lRjE
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ajz
+
+==================================================================
